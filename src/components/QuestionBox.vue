@@ -6,7 +6,6 @@
       </template>
  
       <hr class="my-4">
-        <!-- answers inja az computed miyad yani functon data hast -->
         <b-list-group>
         <b-list-group-item
         v-for="(answer,index) in answers"
@@ -29,7 +28,6 @@
 
 
 <script>
-// lodash ro ke ba npm i lodash nasb kardam inaja import mikonam ke az tush shuffel ro mikham ke karesh ine ke array ro shuffel mikone 
 import _ from 'lodash'
 export default {
   props: {
@@ -46,7 +44,7 @@ export default {
     }
   },
   computed: {
-    answers(){ // mikham ba in hame jvabhaye galt va javabe dorost ro begiram 
+    answers(){ 
       let answers = [...this.currentQuestion.incorrect_answers] 
        answers.push(this.currentQuestion.correct_answer)
        return answers 
@@ -75,9 +73,7 @@ export default {
       this.increment(isCorrect)
     },
     shuffleAnswers(){
-      // javabhaie nadorost va javabe dorost ro hamsho mirizam tuye watchAnswers
       let answers = [...this.currentQuestion.incorrect_answers, this.currentQuestion.correct_answer]
-      // _.shuffle az lodash miyad 
       this.shuffelAnswers = _.shuffle(answers)
       this.correctIndex = this.shuffelAnswers.indexOf(this.currentQuestion.correct_answer)
 },
