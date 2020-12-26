@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props:[ // injuri hame mishe ferstad prob ro ba [] va ''
+  props:[ 
     'numCorrect',
     'numTotal'
   ]
